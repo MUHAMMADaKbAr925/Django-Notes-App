@@ -1,0 +1,40 @@
+
+{% extends 'base/main.html' %}
+
+
+{% block content %}
+<style>
+    .list-group-item {
+
+background-color: #000; /* black */
+
+}
+button {
+  background-color: #39413e;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  margin-left: 1200px;
+  border-radius: 30%;
+}
+</style>
+
+<div class="list-group">
+      {% for message in messages %}
+  <a href="{% url 'note' message.id %}" class="list-group-item list-group-item-action flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{message.title}}</h5>
+        <small>{{message.created_at}}</small>
+      </div>
+      <p class="mb-1">{{ message.body|truncatewords:5 }}</p>
+    </a>
+         {% endfor %}
+
+  </div>
+  <a href="{% url 'new' %}"><button id="button1" >+</button>
+  </a>
+
+  {% endblock content %}

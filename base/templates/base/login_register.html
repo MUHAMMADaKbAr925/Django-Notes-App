@@ -1,0 +1,33 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+
+{% if page == 'register' %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <span style="color: red;">{{ field.errors }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+    {% endif %}
+
+    {% if page == 'login' %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="username">
+        <input  type="password" name="password">
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+    {% endif %}
+
+{% endblock content %}

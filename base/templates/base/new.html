@@ -1,0 +1,17 @@
+{% extends 'base/main.html' %}
+
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+<textarea name="title" id=""></textarea>
+
+<textarea name="body" id=""></textarea>
+<button   class="btn btn-outline-secondary" >Confirm</button>
+</form>
+
+<script>
+
+</script>
+
+{% endblock content %}

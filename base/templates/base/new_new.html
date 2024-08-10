@@ -1,0 +1,57 @@
+{% extends 'base/main.html' %}
+
+
+{% block content %}
+<style>
+    .title {
+        border: 0px;
+        width: 100%;
+        font-size: 1.2em;
+        background-color: black;
+        color: #F0E68C		;
+        margin-left: 30%;
+        
+    }
+    .body {
+        color: #C0C0C0	;
+        border: 0px;
+        width: 100%;
+        padding: 4.5px;
+        font-size: 2em;
+        margin-top: 10px;
+        min-height: 200px;
+        background-color: black;
+
+        
+
+    }
+    textarea.title:focus,
+        textarea.body:focus {
+            outline: none; /* Removes the default focus border */
+            border: none;  /* Removes any additional border */
+        }
+    .subtn{
+        margin-left: 45%;
+    }
+    .colored-br {
+            display: block; /* Makes the span act like a block element */
+            width: 100%; /* Takes the full width */
+            height: 1px; /* Adjust the height to make it look like a line */
+            background-color: rgb(193, 212, 15); /* Set the color to white */
+        }
+</style>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <div class="">
+        <h1>
+        <textarea name="title" id="" class="title">
+        </textarea>
+</h1>
+<span class="colored-br"></span>
+
+    </div>
+<textarea name="body" id="" class="body" required></textarea>
+<button type="submit" class="btn btn-outline-secondary subtn">Save changes</button>
+</form>
+{% endblock %}

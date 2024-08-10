@@ -1,0 +1,43 @@
+{% extends 'base/main.html' %}
+
+
+{% block content %}
+
+<style>
+    button {
+  background-color: #39413e;
+  border: chartreuse;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  margin-left: 1000px;
+  border-radius: 50%;
+}
+row{
+  margin-left: 50px;
+}
+</style>
+
+
+<div class="container">
+
+
+    {% for message in messages %}
+
+    <div class="row" >
+       <a href="{% url 'note' message.id %}">{{message.title}}</a> 
+    </div>
+    {% endfor %}
+</div>
+
+
+<a href="{% url 'new' %}"><button id="button1" >+</button>
+</a>
+
+
+
+
+{% endblock %}
